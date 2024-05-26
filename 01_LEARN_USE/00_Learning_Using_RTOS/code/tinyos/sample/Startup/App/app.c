@@ -47,7 +47,7 @@ void task2Entry (void *param) {
         task2Flag = 1;
         tTaskDelay(1);
         task2Flag = 0;
-        tTaskDelay(1);
+          tTaskDelay(1);
     }
 }
 
