@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="14c200f0-7382-43f7-950c-d70f32068490" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/keil-assistant.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/uv4.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/uv4.log.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebugConfig/Target_1_STM32F100RC.dbgconf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebugConfig/Target_1_STM32F103C4.dbgconf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebugConfig/Target_1_STM32F103RC.dbgconf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebugConfig/Target_1_STM32F103VC.dbgconf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebugConfig/Target_1_STM32F103VG.dbgconf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JLinkLog.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JLinkSettings.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Listings/app.i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Listings/os_bitmap.i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Listings/os_mem.i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Listings/startup_armcm3.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Listings/startup_armcm7.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Listings/startup_stm32f10x_hd.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Listings/startup_stm32f10x_ld.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Listings/startup_stm32f10x_xl.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Listings/system_armcm3.i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Listings/system_armcm7.i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Listings/xos.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RTE/Device/ARMCM3/startup_ARMCM3.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RTE/Device/ARMCM3/system_ARMCM3.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RTE/Device/ARMCM7/startup_ARMCM7.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RTE/Device/ARMCM7/system_ARMCM7.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RTE/RTE_Components.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RTE/_Target_1/RTE_Components.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/test/app.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_bitmap.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_bitmap.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_config.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_core.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_core.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_egroup.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_egroup.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_event.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_list.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_list.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/xos/core/os_list.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_mblock.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_mblock.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_mbox.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_mbox.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_mem.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_mem.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_mutex.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_mutex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_sem.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_sem.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_task.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_task.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_timer.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_timer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/os_types.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/tEvent.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/tHooks.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/core/tHooks.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/port/cortex-m3/os_cpu.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/xos/port/cortex-m3/os_switch.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xos.uvguix.小翠翠" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xos.uvoptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xos.uvprojx" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2GzfJC1vIKRxFQncjOrAHHpnUlG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/tongban/net/project"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="14c200f0-7382-43f7-950c-d70f32068490" name="Changes" comment="" />
+      <created>1667396260469</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667396260469</updated>
+      <workItem from="1667396262077" duration="13000" />
+      <workItem from="1667396298387" duration="8000" />
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
