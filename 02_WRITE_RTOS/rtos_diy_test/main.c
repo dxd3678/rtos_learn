@@ -7,11 +7,13 @@ int flag;
 
 int main()
 {
-	for(;;)
+	while(1)
 	{
 		flag = 0;
 		delay(100);
 		flag = 1;
 		delay(100);
 	}
+	
+	return 0;
 }
