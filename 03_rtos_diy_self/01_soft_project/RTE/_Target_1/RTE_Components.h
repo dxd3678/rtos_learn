@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'rtos_diy' 
+ * Project: 'rtos_diy_self' 
  * Target:  'Target 1' 
  */
 
