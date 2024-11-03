@@ -6,4 +6,6 @@
 *.js
 *.md5
 *.dot
+*.lst
+*.scvd
 Objects/
