@@ -392,6 +392,16 @@
               <FileType>1</FileType>
               <FilePath>.\switch.c</FilePath>
             </File>
+            <File>
+              <FileName>tiny_os.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\tiny_os.h</FilePath>
+            </File>
+            <File>
+              <FileName>tiny_os.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\tiny_os.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
