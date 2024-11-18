@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "tiny_os.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "stdio.h": "c"
     }
 }

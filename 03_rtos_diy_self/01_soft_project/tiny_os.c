@@ -13,7 +13,7 @@
  * <tr><td>2024-11-06 <td>1.0     <td>Leo     <td>内容
  * </table>
  */
-
+#include <stdio.h>
 #include "tiny_os.h"
 #include "ARMCM3.h"
 
@@ -93,6 +93,75 @@ PendSV_Handler_nosave
     BX LR
 }
 
+/* todo: 应用任务申明 */
+extern TASK task1;
+extern TASK task2;
+extern TASK idle_task;
+
+/* 标识当前运行的任务 */ 
+TASK *current_task = NULL;
+/* 标识下一个要运行的任务 */
+TASK *next_task = &task1;
+/* 任务数组，类似于任务链表，便于访问管理 */
+TASK *task_table[2] = {&task1, &task2};
+
+TASK *p_idle_task = &idle_task;
+
+/**
+ * @brief 任务调度函数：选择下一个要运行的任务。（很简单的调度器）
+ */
+void task_sched(void)
+{
+    if (current_task == p_idle_task)
+    {
+        /* 遍历任务数组, 找到延时结束的任务 */
+        for (int i = 0; i < 2; i++)
+        {
+            if (task_table[i]->delay_ticks == 0)
+            {
+                next_task = task_table[i];
+                break;
+            }
+        }
+    }
+    /* task 1 */
+    else if (current_task == task_table[0])
+    {
+        /* 如果 task 2 的延时结束，则选择 task 2 */
+        if (task_table[1]->delay_ticks == 0)
+        {
+            next_task = task_table[1];
+        }
+        /* task2 延时触发，task1 延时也触发，则选择 idle task */
+        else if (task_table[0]->delay_ticks != 0)
+        {
+            next_task = p_idle_task;
+        }
+        else
+        {
+            /* task2 延时触发，task1 延时还没触发，next_task 无需变化 */
+        }
+    }
+    else if (current_task == task_table[1])
+    {
+        /* 如果 task 1 的延时结束，则选择 task 1 */
+        if (task_table[0]->delay_ticks == 0)
+        {
+            next_task = task_table[0];
+        }
+        /* task1 延时触发，task2 延时也触发，则选择 idle task */
+        else if (task_table[1]->delay_ticks != 0)
+        {
+            next_task = p_idle_task;
+        }
+        else
+        {
+            /* task1 延时触发，task2 延时还没触发，next_task 无需变化 */
+        }
+    }
+
+    task_switch();
+}
 
 /**
  * @brief 初始化 systick 定时器
@@ -110,12 +179,28 @@ int32_t systick_init(uint32_t period_ms)
 	return 0;
 }
 
-void task_sched(void);
 /**
  * @brief systick 定时器中断处理函数
  */
 void SysTick_Handler(void)
 {
-    /* 自动调用调度函数 */
+    /* 遍历任务数组，判断任务是否到期 */
+    for (int i = 0; i < 2; i++)
+    {
+        if (task_table[i]->delay_ticks > 0)
+        {
+            task_table[i]->delay_ticks--;
+        }
+    }
+
+    /* 调用调度函数 */
+    task_sched();
+}
+
+void task_delay(uint32_t delay)
+{
+    current_task->delay_ticks = delay;
+
+    /* 主动进行任务调度 */
     task_sched();
 }

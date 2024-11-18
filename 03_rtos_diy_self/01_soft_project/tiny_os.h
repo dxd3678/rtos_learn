@@ -20,12 +20,16 @@
 
 typedef struct
 {
-    uint32_t *stack_top; // 栈顶指针
-    uint32_t stack_size; // 栈大小
+    uint32_t *stack_top;  // 栈顶指针
+    uint32_t stack_size;  // 栈大小
+    uint32_t delay_ticks; // 延迟时间
 } TASK;
 
 void task_first_run(void);
 void task_switch(void);
 
 int32_t systick_init(uint32_t period_ms);
+
+void task_delay(uint32_t delay);
+
 #endif // __TINY_OS_H__
