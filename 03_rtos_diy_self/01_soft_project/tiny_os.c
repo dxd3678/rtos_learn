@@ -43,7 +43,7 @@ void task_first_run(void)
 }
 
 /**
- * @brief 主要工作在 pendsv 当作运行
+ * @brief 触发 pendsv 中断，进行任务调度
  */
 void task_switch(void)
 {
@@ -91,4 +91,31 @@ PendSV_Handler_nosave
 	ORR LR, LR, #0x04
 	/* 这里的中断返回：其实就是触发中断异常退出序列，硬件会加载PC指针的值 */
     BX LR
+}
+
+
+/**
+ * @brief 初始化 systick 定时器
+ */
+int32_t systick_init(uint32_t period_ms)
+{
+    SysTick->LOAD = period_ms * SystemCoreClock / 1000 - 1;
+    NVIC_SetPriority(SysTick_IRQn, (1 << __NVIC_PRIO_BITS) - 1);
+    SysTick->VAL = 0;
+    // 设置 systick 定时器时钟源为 CPU 时钟，并使能定时器，并使能中断
+    SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk 
+                    | SysTick_CTRL_ENABLE_Msk 
+                    | SysTick_CTRL_TICKINT_Msk;
+	
+	return 0;
+}
+
+void task_sched(void);
+/**
+ * @brief systick 定时器中断处理函数
+ */
+void SysTick_Handler(void)
+{
+    /* 自动调用调度函数 */
+    task_sched();
 }

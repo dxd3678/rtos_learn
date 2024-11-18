@@ -43,13 +43,14 @@ void delay(int32_t cnt)
 int32_t task1_flag = 0;
 void task1_handler(void *param)
 {
+	/* 在第一个任务初始化的时候调用，避免任务还没初始化好，从而导致中断触发 */
+	systick_init(10);
 	while (1)
 	{
 		task1_flag = 1;
 		delay(100);
 		task1_flag = 0;
 		delay(100);
-		task_sched();
 	}
 }
 
@@ -62,7 +63,6 @@ void task2_handler(void *param)
 		delay(100);
 		task2_flag = 0;
 		delay(100);
-		task_sched();
 	}
 }
 

@@ -97,7 +97,7 @@ Systick 的中断优先级设置为了最高，并且任务切换在 Systick 当
 
 ![image-20241102232818392](./Readme.assets/image-20241102232818392.png)
 
-## test--内核编程
+## test01--内核编程
 
 需求如下：
 
@@ -143,7 +143,7 @@ Systick 的中断优先级设置为了最高，并且任务切换在 Systick 当
 
 ![image-20241104231748560](./Readme.assets/image-20241104231748560.png)
 
-## test--任务切换demo
+## test02--任务切换demo
 
 两个核心问题：
 
@@ -274,3 +274,58 @@ void task1_handler(void *param)
 - 任务的数据结构里面的栈顶指针没有及时更新。
 - 每个任务必须主动调用 tTaskSched()，来切换至下一个任务运行。如果他们不进行主动切换，则会一直占用 CPU。
   - 有没有办法，自动管理任务之间的调度呢？避免 CPU 一直被某一个任务占用。
+
+
+
+****
+
+## test03--时间片调度
+
+涉及要点：
+
+- systick 初始化配置
+- 在 SysTick_Handler 当中调用任务调度函数。
+
+
+
+两个任务代码的改进：
+
+- 不在需要手动的调用任务切换函数。
+
+```c
+int32_t task1_flag = 0;
+void task1_handler(void *param)
+{
+	systick_init(10);
+	while (1)
+	{
+		task1_flag = 1;
+		delay(100);
+		task1_flag = 0;
+		delay(100);
+	}
+}
+
+int32_t task2_flag = 0;
+void task2_handler(void *param)
+{
+	while (1)
+	{
+		task2_flag = 1;
+		delay(100);
+		task2_flag = 0;
+		delay(100);
+	}
+}
+```
+
+实验现象：
+
+- 基于时间片在运行
+
+![image-20241118231859890](./Readme.assets/image-20241118231859890.png)
+
+todo:
+
+- delay 函数在浪费 CPU 的性能。
+

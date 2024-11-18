@@ -27,4 +27,5 @@ typedef struct
 void task_first_run(void);
 void task_switch(void);
 
+int32_t systick_init(uint32_t period_ms);
 #endif // __TINY_OS_H__
